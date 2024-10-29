@@ -1,0 +1,66 @@
+
+/*default css*/
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+*{
+    font-family: 'LINESeedKR-Bd';    
+    margin: 0;
+    padding: 0;
+    outline: 20; 
+    font-family: ns-r;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 800px;
+    position: relative;
+    background-color: var(--box-bg);
+  }
+  
+
+
+
+
+/*login css*/
+.login-container{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-wrap{
+    width: 500px;
+}
+.login-wrap .input-wrap{
+padding : 15px 30px;
+}
+
+.login-wrap .login-button-box {
+padding : 20px 30px;
+display  : flex;
+justify-content : center;
+}
+
+.login-wrap .login-button-box>button{
+width : 100%;
+}
+.member-link-box{
+ display : flex;
+ justify-content : center;
+ gap : 20px;
+}
+.member-link-box>a:hover{
+    text-decoration : underline;
+}
