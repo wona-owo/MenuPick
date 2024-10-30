@@ -1,0 +1,178 @@
+
+/*default css*/
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+*{
+    font-family: 'LINESeedKR-Bd';    
+    margin: 0;
+    padding: 0;
+    outline: 20; 
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 800px;
+    position: relative;
+    background-color: var(--box-bg);
+  }
+  
+
+
+/*header css*/
+.header {
+  background-color: var(--main2);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index:1;
+}
+.header > div {
+  border-bottom: 2px solid rgb(212, 212, 212);
+  padding: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex; 
+  align-items: center;
+}
+.header a {
+  color: var(--gray8);
+}
+.logo {
+  margin-right: 24px;
+}
+
+.logo > a {
+  color: #f40;
+  font-size: 28px;
+}
+
+.nav {
+  flex: 1;
+  
+}
+.nav > ul {
+  display: flex;		
+  align-items: center;
+}
+.nav > ul > li {
+  margin: 0px 15px;
+  position: relative; 
+ 
+}
+.nav a,
+.user-menu a {
+  transition-duration: 0.3s;
+}
+
+.nav a:hover,
+.user-menu a:hover {
+  color: #f40; 
+}
+
+.nav .sub-menu {
+  display: none;
+  position: absolute;
+  width: 130px;
+  background-color: #fff;
+  border: 1px solid var(--main2);
+  border-radius: 5px;
+  left: 10px; 
+  z-index: 1;
+}
+
+.sub-menu > li {
+  color: var(--main2);
+  padding: 10px;
+  display: inline-block;
+}
+
+header > div{
+  justify-content: space-between;
+}
+
+.nav > ul > li:hover > .sub-menu {
+  display: block;  
+}
+.sub-menu > li > a:hover {
+  background-color: var(--main2);
+  color: #f40;
+}
+
+
+.content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 30px auto;
+  flex: 1;
+ 
+}
+.page-title {
+  font-weight : bold;
+  padding: 30px;
+  text-align: center;
+  font-family: ns-b;
+  font-size: 20px;
+  color: var(--main2);
+}
+
+img {
+  height: 26px;
+  width: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+/*footer css*/
+
+footer > div {
+  align-items: center;
+}
+
+.footer{
+  border-top: 2px dashed #f40;
+  padding-top: 10px;
+}
+
+/*login css*/
+.login-container{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-wrap{
+    width: 500px;
+}
+.login-wrap .input-wrap{
+padding : 15px 30px;
+}
+
+.login-wrap .login-button-box {
+padding : 20px 30px;
+display  : flex;
+justify-content : center;
+}
+
+.login-wrap .login-button-box>button{
+width : 100%;
+}
+.member-link-box{
+ display : flex;
+ justify-content : center;
+ gap : 20px;
+}
+.member-link-box>a:hover{
+    text-decoration : underline;
+}
