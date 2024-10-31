@@ -7,6 +7,7 @@
     font-style: normal;
 }
 
+/*기본 폰트 스타일, 페이지 세팅*/
 *{
     font-family: 'LINESeedKR-Bd';    
     margin: 0;
@@ -15,8 +16,10 @@
     list-style-type: none;
 }
 
+/*링크 걸때 텍스트 파랗게 되는거, 밑줄 생기는거 제거*/
 a {
     text-decoration: none;
+    color: var(--gray8);
 }
 
 .wrap {
@@ -33,6 +36,7 @@ a {
     border-radius: 10px; 
   }
   
+
   [class^="btn-"] { 
     cursor: pointer; 
     font-size: 14px;
@@ -46,8 +50,10 @@ a {
     color: #fff;
   }
   .btn-primary:hover {
-    background-color: #474646;
+    background-color: #66adff;
   }
+
+
   .btn-secondary {
     border: 1px solid var(--gray4);
     background-color: var(--gray4);
@@ -101,28 +107,6 @@ a {
     border-radius: 25px;
   }
   
-  .tbl {
-    border-top: 1px solid var(--main3);
-    width: 100%;
-    border-spacing: 0;
-  }
-  .tbl th,
-  .tbl td {
-    text-align: center;
-    border-bottom: 1px solid var(--line2);
-    padding: 10px 20px;
-  }
-  .tbl th.left,
-  .tbl td.left {
-    text-align: left;
-  }
-  .tbl th {
-    background-color: rgba(101, 146, 254, 0.2);
-  }
-  .tbl.tbl-hover tbody > tr:hover {
-    cursor: pointer;
-    background-color: rgba(101, 146, 254, 0.1);
-  }
   .input-wrap {
     display: flex;
     flex-direction: column; 
@@ -371,9 +355,19 @@ img {
   padding-top: 10px;
 }
 
+.footer > div{
+  display: flex;
+  justify-content: center;
+}
+
 .footer > div > p {
   margin: 10px 0px;
   font-size: 16px;
+}
+
+.footer > div > span{
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 /*login css*/
