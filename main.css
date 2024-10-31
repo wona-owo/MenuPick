@@ -1,0 +1,157 @@
+.search{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: #f40;
+    border: 1px solid #f40;
+    border-radius: 20px;
+    box-sizing:border-box;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+.map>img{
+    width: 60%;
+    float: left;
+    height: 600px;
+    margin-left: 30px;
+}
+.focus_detail{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top:50px;
+    padding-top: 240px;
+    padding-bottom: 240px;
+    margin-right: 30px;
+    border: #f40 1px solid;
+    border-radius: 20px;
+}
+.nowdays{
+    margin-left: 100px;
+    margin-top: 50px;
+    color: #f40;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    text-align: center;
+}
+.nowdays_category1{
+    padding: auto;
+    width: 270px;
+    height: 140px;
+    color: #f40;
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 20px;
+    align-content: center;
+    background-image: url("img/korensik.jpg");
+    background-size: cover;
+}
+.korean{
+    background-color: white;
+    box-sizing: content-box;
+    font-size: 30px;
+    width: 100px;
+    margin-left: 80px;
+}
+.nowdays_category2{
+    width: 270px;
+    height: 140px;
+    color: #f40;
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 20px;
+    align-content: center;
+    background-image: url("img/japansik.webp");
+    background-size: cover;
+}
+.japan{
+    background-color: white;
+    box-sizing: content-box;
+    font-size: 30px;
+    width: 100px;
+    margin-left: 80px;
+}
+.nowdays_category3{
+    width: 270px;
+    height: 140px;
+    color: #f40;
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 20px;
+    align-content: center;
+    background-image: url("img/yangsik.png");
+    background-size: cover;
+}
+.western{
+    background-color: white;
+    box-sizing: content-box;
+    font-size: 30px;
+    width: 100px;
+    margin-left: 80px;
+}
+.nowdays_category4{
+    width: 270px;
+    height: 140px;
+    color: #f40;
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 20px;
+    align-content: center;
+    background-image: url("img/jungsik.jpg");
+    background-size: cover;
+}
+.china{
+    background-color: white;
+    box-sizing: content-box;
+    font-size: 30px;
+    width: 100px;
+    margin-left: 80px;
+}
+.around{
+    margin-left: 100px;
+    margin-top: 50px;
+    color: #f40;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.container1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    height: 500px;
+}
+.around_content{
+    border: 1px solid black;
+    width: 1300px;
+    align-content: center;
+    border-radius: 20px;
+}
+.top_parent{
+    position: relative;
+    justify-content: center;
+    margin: 0 auto;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 70%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    width: 60px;
+    height: 60px;
+
+}
