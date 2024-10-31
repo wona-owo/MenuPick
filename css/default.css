@@ -1,0 +1,546 @@
+
+/*default css*/
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*기본 폰트 스타일, 페이지 세팅*/
+*{
+    font-family: 'LINESeedKR-Bd';    
+    margin: 0;
+    padding: 0;
+    outline: 20; 
+    list-style-type: none;
+}
+
+/*링크 걸때 텍스트 파랗게 되는거, 밑줄 생기는거 제거*/
+a {
+    text-decoration: none;
+    color: var(--gray8);
+}
+
+.wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 800px;
+    position: relative;
+  }
+  
+
+  section.section {
+    padding: 20px;
+    border-radius: 10px; 
+  }
+  
+
+  [class^="btn-"] { 
+    cursor: pointer; 
+    font-size: 14px;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  .btn-primary {
+    border: 1px solid var(--main3);
+    background-color: #f40;
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background-color: #66adff;
+  }
+
+
+  .btn-secondary {
+    border: 1px solid var(--gray4);
+    background-color: var(--gray4);
+    color: var(--gray8);
+  }
+  .btn-secondary:hover {
+    background-color: rgba(143, 143, 143, 0.9);
+  }
+  .btn-point {
+    border: 1px solid var(--main5);
+    background-color: var(--main5);
+    color: var(--gray8);
+  }
+  .btn-point:hover {
+    background-color: rgba(140, 97, 255, 0.9);
+  }
+  .btn-primary.outline {
+    color: var(--main3);
+    background-color: var(--gray8);
+  }
+  .btn-primary.outline:hover {
+    background-color: rgba(101, 146, 254, 0.2);
+  }
+  .btn-secondary.outline {
+    color: var(--gray4);
+    background-color: var(--gray8);
+  }
+  .btn-secondary.outline:hover {
+    background-color: rgba(143, 143, 143, 0.2);
+  }
+  .btn-point.outline {
+    color: var(--main5);
+    background-color: var(--gray8);
+  }
+  .btn-point.outline:hover {
+    background-color: rgba(140, 97, 255, 0.2);
+  }
+  [class^="btn-"].sm {
+    padding: 5px 10px;
+    font-family: ns-r; 
+    font-size: 12px;
+  }
+  [class^="btn-"].md {
+    padding: 7px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+  [class^="btn-"].lg {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 25px;
+  }
+  
+  .input-wrap {
+    display: flex;
+    flex-direction: column; 
+  }
+  .input-wrap > .input-title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5; 
+  }
+  .input-item {
+    display: flex;
+    gap: 10px; 
+  }
+  .input-item > input {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 1px solid #f40;
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 8px 0px;
+  }
+  .input-item + .input-msg { 
+    position: relative;
+    margin-top: 8px;
+    padding-left: 24px;
+    color: var(--gray3);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .input-item + .input-msg::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: url(/resources/images/icon_info.svg) no-repeat center / contain;
+  }
+  .input-item + .input-msg.valid {
+    color: #1065dc;
+  }
+  .input-item + .input-msg.valid::before { 
+    background: url(/resources/images/icon_info_success.svg) no-repeat center / contain;
+  }
+  .input-item + .input-msg.invalid {
+    color: #ff3d00;
+  }
+  .input-item + .input-msg.invalid::before {
+    background: url(/resources/images/icon_info_warning.svg) no-repeat center / contain;
+  }
+  
+  .input-item > textarea {
+    width: 100%;
+    height: 156px;
+    padding: 15px;
+    resize: none; 
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid var(--line2);
+  }
+  
+  .input-wrap > input[type="checkbox"] {
+    display: none;
+  }
+  .input-wrap > input[type="checkbox"] + label {
+    position: relative;
+    display: block;
+    flex-grow: 1; 
+    padding: 8px 0 8px 30px;
+    cursor: pointer;
+  }
+  .input-wrap > input[type="checkbox"] + label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    color: var(--main3);
+    border-radius: 50%;
+    background: url(/resources/images/icon_check.png) no-repeat center / 20px; 
+  }
+  .input-wrap > input[type="checkbox"]:checked + label::before {
+    background: url(/resources/images/icon_check_active.png) no-repeat center / 20px;
+  }
+  
+  .input-wrap > input[type="radio"] {
+    display: none;
+  }
+  .input-wrap > input[type="radio"] + label {
+    position: relative;
+    display: block;
+    flex-grow: 1;
+    padding: 8px 0 8px 30px;
+    cursor: pointer;
+  }
+  .input-wrap > input[type="radio"] + label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    color: var(--main3);
+    border-radius: 50%;
+    background: url(/resources/images/icon_check.png) no-repeat center / 20px;
+  }
+  .input-wrap > input[type="radio"]:checked + label::before {
+    background: url(/resources/images/icon_check_active.png) no-repeat center / 20px;
+  }
+  .select {
+    flex: 1;
+    position: relative;
+    border: 1px solid var(--line2);
+    border-radius: 5px;
+    background: #fff url(/resources/images/icon_arrow_down.svg) no-repeat right 12px center / 12px;
+    overflow: hidden;
+  }
+  .select > select {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+  }
+
+/*header css*/
+.header {
+  background-color: var(--main2);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index:1;
+}
+.header > div {
+  border-bottom: 2px solid rgb(212, 212, 212);
+  padding: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex; 
+  align-items: center;
+}
+.header a {
+  color: var(--gray8);
+}
+.logo {
+  margin-right: 24px;
+}
+
+.logo > a {
+  color: #f40;
+  font-size: 28px;
+}
+
+.nav {
+  flex: 1;
+  
+}
+.nav > ul {
+  display: flex;		
+  align-items: center;
+}
+.nav > ul > li {
+  margin: 0px 15px;
+  position: relative; 
+ 
+}
+.nav a,
+.user-menu a {
+  transition-duration: 0.3s;
+}
+
+.nav a:hover,
+.user-menu a:hover {
+  color: #f40; 
+  text-decoration : underline;
+}
+
+.nav .sub-menu {
+  display: none;
+  position: absolute;
+  width: 130px;
+  background-color: #fff;
+  border: 1px solid var(--main2);
+  border-radius: 5px;
+  left: 10px; 
+  z-index: 1;
+}
+
+.sub-menu > li {
+  color: var(--main2);
+  padding: 10px;
+  display: inline-block;
+}
+
+header > div{
+  justify-content: space-evenly;
+}
+
+.nav > ul > li:hover > .sub-menu {
+  display: block;  
+}
+.sub-menu > li > a:hover {
+  background-color: var(--main2);
+  color: #f40;
+  text-decoration : underline;
+}
+
+
+.content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 30px auto;
+  flex: 1;
+ 
+}
+.page-title {
+  font-weight : bold;
+  padding: 30px;
+  text-align: center;
+  font-size: 25px;
+}
+
+img {
+  height: 26px;
+  width: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+/*footer css*/
+
+.footer{
+  border-top: 2px dashed #f40;
+  padding-top: 10px;
+}
+
+.footer > div{
+  display: flex;
+  justify-content: center;
+}
+
+.footer > div > p {
+  margin: 10px 0px;
+  font-size: 16px;
+}
+
+.footer > div > span{
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+
+.footer > div > a {
+  color: var(--gray8);
+}
+
+
+/*login css*/
+.login-container{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-wrap{
+    width: 400px;
+}
+.login-wrap .input-wrap{
+padding : 15px 30px;
+}
+
+.login-wrap .login-button-box {
+padding : 20px 30px;
+display  : flex;
+justify-content : center;
+}
+
+.login-wrap .login-button-box>button{
+width : 100%;
+}
+.member-link-box{
+ display : flex;
+ justify-content : center;
+ gap : 20px;
+}
+.member-link-box>a:hover{
+    text-decoration : underline;
+}
+
+
+
+/*상세페이지 css*/
+
+ .diner-main-img {
+  display: flex;
+  justify-content: center;
+}
+
+i {
+  padding-right: 10px;
+}
+
+.restaurant-detail{
+  display: flex;
+  justify-content: center;
+}
+
+
+#main-img{
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 650px;
+  height: 600px;
+}
+
+.restaurant-category{
+  padding-left: 20px;
+  font-size: 15px;
+}
+.restaurant-name{
+  padding-left: 20px;
+  font-size: 40px;
+}
+
+.form{
+  border: 2px solid black;
+  border-radius: 30px;
+  border-color: #f40;
+}
+
+.restaurant-location1{
+  padding-left: 59px;
+}
+.restaurant-detail-menu{
+  width: 50%;
+  line-height: 100px;
+
+}
+.restaurant-detail-menu > ul > li{
+  list-style: none;
+  display: inline;
+  padding: 50px;
+  background-color: #f40;
+}
+.restaurant-detail-menu{
+  display: inline-block;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+.button{
+  height: 40px;
+  width: 120px;
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*탭 전체 스타일*/
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 700px;
+  margin: 0 auto;
+}
+
+/* 탭 스타일 */
+.tab_item {
+  width: calc(100%/5);
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  background-color: #f40;
+}
+.tab_item:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+/*라디오 버튼 삭제*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/* 탭 컨텐츠 스타일 */
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+
+
+
+
+/* 선택 된 탭 콘텐츠를 표시 */
+#menu:checked ~ #menu_content,
+#review:checked ~ #review_content,
+#picture:checked ~ #picture_content,
+#around:checked ~ #around_content,
+#information:checked ~ #information_content {
+  display: block;
+  
+}
+
+/* 선택된 탭 스타일  -이거 고쳐야함 전부*/
+.tabs input:checked + .tab_item {
+  background-color: rgb(165, 44, 0);
+  color: #fff;
+}
+
+.tab_item :current {
+  background-color:white;
+  color: #f40;
+}
