@@ -411,133 +411,149 @@ width : 100%;
 
 /*상세페이지 css*/
 
- .diner-main-img {
+/* 메인 컨테이너 스타일 */
+.restaurant-detail-header {
+  display: block; /* 이미지와 내용을 세로로 배치 */
+  text-align: center; /* 중앙 정렬 */
+  padding: 20px;
+}
+
+/* 이미지 스타일 */
+.diner-main-img {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
-i {
-  padding-right: 10px;
+#main-img {
+  width: 60%; /* 이미지 너비 조정 */
+  height: auto;
+  border-radius: 10px; /* 이미지 둥근 테두리 */
 }
 
-.restaurant-detail{
+/* 레스토랑 상세 정보 스타일 */
+.restaurant-detail {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
 }
 
-
-#main-img{
-  padding-top: 20px;
-  padding-left: 20px;
-  width: 650px;
-  height: 600px;
-}
-
-.restaurant-category{
-  padding-left: 20px;
+.restaurant-category {
   font-size: 15px;
-}
-.restaurant-name{
-  padding-left: 20px;
-  font-size: 40px;
+  color: #666;
+  margin-bottom: 5px;
 }
 
-.form{
-  border: 2px solid black;
-  border-radius: 30px;
-  border-color: #f40;
+.restaurant-name {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.restaurant-location1{
-  padding-left: 59px;
-}
-.restaurant-detail-menu{
-  width: 50%;
-  line-height: 100px;
-
-}
-.restaurant-detail-menu > ul > li{
-  list-style: none;
-  display: inline;
-  padding: 50px;
-  background-color: #f40;
-}
-.restaurant-detail-menu{
-  display: inline-block;
+.restaurant-info {
+  margin-bottom: 20px;
 }
 
-a{
-  text-decoration: none;
-  color: white;
+.restaurant-info i {
+  padding-right: 10px;
+  color: #f40;
 }
-.button{
+
+.restaurant-info span {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* 예약 버튼 스타일 */
+#book {
+  width: 200px;
   height: 40px;
-  width: 120px;
-  margin-left: 50px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  background-color: #f40;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
 }
 
-/*탭 전체 스타일*/
-.tabs {
-  margin-top: 50px;
-  padding-bottom: 40px;
-  background-color: #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 700px;
-  margin: 0 auto;
+#book:hover {
+  background-color: #c30;
 }
 
-/* 탭 스타일 */
+/* 탭 메뉴 스타일 */
+.restaurant-detail-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.restaurant-detail-info{
+  display: flex;
+  flex-direction: column;
+}
+
+
 .tab_item {
-  width: calc(100%/5);
+  width: calc(100% / 5);
   height: 50px;
   line-height: 50px;
   font-size: 16px;
   text-align: center;
   color: white;
-  display: block;
-  float: left;
-  text-align: center;
   font-weight: bold;
-  transition: all 0.2s ease;
   background-color: #f40;
+  transition: background-color 0.2s ease;
 }
+
 .tab_item:hover {
   opacity: 0.75;
   cursor: pointer;
 }
-/*라디오 버튼 삭제*/
-input[name="tab_item"] {
-  display: none;
-}
 
-/* 탭 컨텐츠 스타일 */
+/* 탭 내용 스타일 */
 .tab_content {
   display: none;
-  padding: 40px 40px 0;
-  clear: both;
-  overflow: hidden;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
 }
 
+.tab_content.active {
+  display: block;
+}
 
-
-
-
-/* 선택 된 탭 콘텐츠를 표시 */
+/* 선택된 탭에 따라 내용 표시 */
 #menu:checked ~ #menu_content,
 #review:checked ~ #review_content,
 #picture:checked ~ #picture_content,
 #around:checked ~ #around_content,
 #information:checked ~ #information_content {
   display: block;
-  
 }
 
-/* 선택된 탭 스타일  -이거 고쳐야함 전부*/
-.tabs input:checked + .tab_item {
-  background-color: rgb(165, 44, 0);
-  color: #fff;
+
+/*라디오 버튼 삭제*/
+input[name="tab_item"] {
+  display: none;
+}
+
+
+/* 선택된 탭 스타일: 텍스트와 배경색 반전 */
+input[type="radio"]:checked + label.tab_item {
+  background-color: #fff; /* 배경색을 흰색으로 변경 */
+  color: #f40; /* 텍스트 색상을 강조색으로 변경 */
+  border-bottom: 2px solid #f40; /* 선택된 탭 하단 강조 */
 }
 
 .tab_item :current {
