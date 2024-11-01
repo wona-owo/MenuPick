@@ -93,7 +93,6 @@ a {
   }
   [class^="btn-"].sm {
     padding: 5px 10px;
-    font-family: ns-r; 
     font-size: 12px;
   }
   [class^="btn-"].md {
@@ -245,11 +244,11 @@ a {
 
 /*header css*/
 .header {
-  background-color: var(--main2);
+  background-color: #fff;
   width: 100%;
   position: sticky;
   top: 0;
-  z-index:1;
+  z-index:999;
 }
 .header > div {
   border-bottom: 2px solid rgb(212, 212, 212);
@@ -319,10 +318,16 @@ header > div{
 .nav > ul > li:hover > .sub-menu {
   display: block;  
 }
-.sub-menu > li > a:hover {
-  background-color: var(--main2);
-  color: #f40;
-  text-decoration : underline;
+
+.sub-menu li a {
+    padding: 10px 15px; /* 여백 추가 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 전환 효과 */
+    border-radius: 20px; /* 둥근 모서리 */
+}
+
+.sub-menu li a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* 회색 배경색 추가 */
+  color: #f40; /* 텍스트 색상을 강조색으로 변경 */
 }
 
 
@@ -370,6 +375,12 @@ img {
   padding-right: 4px;
 }
 
+
+.footer > div > a {
+  color: var(--gray8);
+}
+
+
 /*login css*/
 .login-container{
     display : flex;
@@ -399,4 +410,361 @@ width : 100%;
 }
 .member-link-box>a:hover{
     text-decoration : underline;
+}
+
+
+
+/*상세페이지 css*/
+
+/* 메인 컨테이너 스타일 */
+.restaurant-detail-header {
+  display: block; /* 이미지와 내용을 세로로 배치 */
+  text-align: center; /* 중앙 정렬 */
+  padding: 20px;
+}
+
+/* 이미지 스타일 */
+.diner-main-img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#main-img {
+  width: 60%; /* 이미지 너비 조정 */
+  height: auto;
+  border-radius: 10px; /* 이미지 둥근 테두리 */
+}
+
+/* 레스토랑 상세 정보 스타일 */
+.restaurant-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.restaurant-category {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.restaurant-name {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.restaurant-info {
+  margin-bottom: 20px;
+}
+
+.restaurant-info i {
+  padding-right: 10px;
+  color: #f40;
+}
+
+.restaurant-info span {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* 예약 버튼 스타일 */
+#book {
+  width: 200px;
+  height: 40px;
+  background-color: #f40;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+#book:hover {
+  background-color: #c30;
+}
+
+/* 탭 메뉴 스타일 */
+.restaurant-detail-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.restaurant-detail-info{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.tab_item {
+  width: calc(100% / 5);
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: #f40;
+  transition: background-color 0.2s ease;
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+/* 탭 내용 스타일 */
+.tab_content {
+  display: none;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+.tab_content.active {
+  display: block;
+}
+
+/* 선택된 탭에 따라 내용 표시 */
+#menu:checked ~ #menu_content,
+#review:checked ~ #review_content,
+#picture:checked ~ #picture_content,
+#around:checked ~ #around_content,
+#information:checked ~ #information_content {
+  display: block;
+}
+
+
+/*라디오 버튼 삭제*/
+input[name="tab_item"] {
+  display: none;
+}
+
+
+/* 선택된 탭 스타일: 텍스트와 배경색 반전 */
+input[type="radio"]:checked + label.tab_item {
+  background-color: #fff; /* 배경색을 흰색으로 변경 */
+  color: #f40; /* 텍스트 색상을 강조색으로 변경 */
+  border-bottom: 2px solid #f40; /* 선택된 탭 하단 강조 */
+}
+
+.tab_item :current {
+  background-color:white;
+  color: #f40;
+}
+
+/*main page css*/
+/* 검색창 스타일 */
+.search-box {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.search-input {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #f40;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #c30;
+}
+
+/* 지도 및 포커스 식당 정보 섹션 */
+.map-focus-section {
+  display: flex;
+  padding: 20px;
+}
+
+/* 지도 컨테이너 */
+.map-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.map-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+}
+
+/* 포커스 식당 정보 스타일 */
+.focus-info {
+  width: 35%;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.focus-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.focus-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.detail-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f40;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.detail-button:hover {
+  background-color: #c30;
+}
+
+/* 트렌딩 카테고리와 내 근처 맛집 */
+.trending-section, .nearby-section {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.category-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.category-item {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  color: #fff;
+  background-color: #f40;
+}
+
+
+/* 내 근처 맛집 섹션 */
+.nearby-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nearby-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.nearby-item:hover {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.nearby-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nearby-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.nearby-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.nearby-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+/* 상단으로 이동 버튼 스타일 */
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.top {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f40;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.top:hover {
+  background-color: #c30;
 }
