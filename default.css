@@ -539,7 +539,7 @@ img {
   flex-direction: column;
 }
 
-.tab_item {
+.tab-item {
   width: calc(100% / 5);
   height: 50px;
   line-height: 50px;
@@ -551,13 +551,13 @@ img {
   transition: background-color 0.2s ease;
 }
 
-.tab_item:hover {
+.tab-item:hover {
   opacity: 0.75;
   cursor: pointer;
 }
 
 /* 탭 내용 스타일 */
-.tab_content {
+.tab-content {
   display: none;
   padding: 20px;
   font-size: 16px;
@@ -566,32 +566,32 @@ img {
   margin-top: 10px;
 }
 
-.tab_content.active {
+.tab-content.active {
   display: block;
 }
 
 /* 선택된 탭에 따라 내용 표시 */
 #menu:checked ~ #menu_content,
-#review:checked ~ #review_content,
-#picture:checked ~ #picture_content,
-#around:checked ~ #around_content,
-#information:checked ~ #information_content {
+#review:checked ~ #review-content,
+#picture:checked ~ #picture-content,
+#around:checked ~ #around-content,
+#information:checked ~ #information-content {
   display: block;
 }
 
 /*라디오 버튼 삭제*/
-input[name="tab_item"] {
+input[name="tab-item"] {
   display: none;
 }
 
 /* 선택된 탭 스타일: 텍스트와 배경색 반전 */
-input[type="radio"]:checked + label.tab_item {
+input[type="radio"]:checked + label.tab-item {
   background-color: #fff; /* 배경색을 흰색으로 변경 */
   color: #f40; /* 텍스트 색상을 강조색으로 변경 */
   border-bottom: 2px solid #f40; /* 선택된 탭 하단 강조 */
 }
 
-.tab_item :current {
+.tab-item :current {
   background-color: white;
   color: #f40;
 }

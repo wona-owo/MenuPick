@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="default.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -54,56 +54,56 @@
         <!-- 탭 메뉴와 콘텐츠 섹션 -->
         <section class="restaurant-detail-info">
           <div class="restaurant-detail-menu">
-            <input id="information" type="radio" name="tab_item" checked />
+            <input id="information" type="radio" name="tab-item" checked />
             <label
-              class="tab_item"
+              class="tab-item"
               for="information"
               onclick="showContent('information_content')"
               >정보</label
             >
 
-            <input id="menu" type="radio" name="tab_item" />
+            <input id="menu" type="radio" name="tab-item" />
             <label
-              class="tab_item"
+              class="tab-item"
               for="menu"
               onclick="showContent('menu_content')"
               >메뉴</label
             >
 
-            <input id="review" type="radio" name="tab_item" />
+            <input id="review" type="radio" name="tab-item" />
             <label
-              class="tab_item"
+              class="tab-item"
               for="review"
               onclick="showContent('review_content')"
               >리뷰</label
             >
 
-            <input id="picture" type="radio" name="tab_item" />
+            <input id="picture" type="radio" name="tab-item" />
             <label
-              class="tab_item"
+              class="tab-item"
               for="picture"
               onclick="showContent('picture_content')"
               >사진</label
             >
 
-            <input id="around" type="radio" name="tab_item" />
+            <input id="around" type="radio" name="tab-item" />
             <label
-              class="tab_item"
+              class="tab-item"
               for="around"
-              onclick="showContent('around_content')"
+              onclick="showContent('around-content')"
               >주변</label
             >
           </div>
 
           <!-- 탭 콘텐츠 -->
           <div class="restaurant-detail-content">
-            <div class="tab_content active" id="information_content">
+            <div class="tab-content active" id="information_content">
               정보 콘텐츠
             </div>
-            <div class="tab_content" id="menu_content">메뉴 콘텐츠</div>
-            <div class="tab_content" id="review_content">리뷰 콘텐츠</div>
-            <div class="tab_content" id="picture_content">사진 콘텐츠</div>
-            <div class="tab_content" id="around_content">주변 콘텐츠</div>
+            <div class="tab-content" id="menu_content">메뉴 콘텐츠</div>
+            <div class="tab-content" id="review_content">리뷰 콘텐츠</div>
+            <div class="tab-content" id="picture_content">사진 콘텐츠</div>
+            <div class="tab-content" id="around_content">주변 콘텐츠</div>
           </div>
         </section>
       </form>
@@ -124,7 +124,7 @@
     <script>
       function showContent(contentId) {
         // 모든 탭 콘텐츠 숨기기
-        const contents = document.querySelectorAll(".tab_content");
+        const contents = document.querySelectorAll(".tab-content");
         contents.forEach((content) => content.classList.remove("active"));
 
         // 선택된 콘텐츠만 보이도록 설정
