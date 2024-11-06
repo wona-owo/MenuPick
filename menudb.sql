@@ -122,6 +122,9 @@ create table
 -- 'b' || to_char(sysdate, 'yymmdd') || lpad (seq_book.nextval, 4, '0')
 create sequence seq_book maxvalue 9999 cycle;
 
+-- Insert into tbl_book
+insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411060001', 'm2411060002', to_date('24/11/15', 'yy/mm/dd'), '1230', 4);
+
 create table
   tbl_recommend (
     review_no varchar2 (11) references tbl_review (review_no) on delete cascade,
