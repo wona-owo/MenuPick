@@ -140,5 +140,4 @@ alter table tbl_dinner modify dinner_addr varchar2(100);
 alter table tbl_dinner modify dinner_name varchar2(100);
 alter table tbl_member modify member_addr varchar2(100);
 
-
 commit;
