@@ -136,6 +136,9 @@ create table
   );
 
 -- 수정 로그 : tbl_dinner dinner_addr, dinner_name  / member_addr 컬럼 자료형 크기 조정
+alter table tbl_dinner modify dinner_addr varchar2(100);
+alter table tbl_dinner modify dinner_name varchar2(100);
+alter table tbl_member modify member_addr varchar2(100);
 
 
 commit;
