@@ -17,8 +17,8 @@ drop sequence seq_book;
 create table
   tbl_dinner (
     dinner_no varchar2 (11) primary key,
-    dinner_name varchar2 (20) not null,
-    dinner_addr varchar2 (30) not null,
+    dinner_name varchar2 (100) not null,
+    dinner_addr varchar2 (100) not null,
     dinner_open varchar2 (20) not null,
     dinner_close varchar2 (20) not null,
     dinner_phone char(13) not null,
@@ -30,6 +30,8 @@ create table
     dinner_pw varchar2 (60) not null,
     dinner_confirm char(1) default 'n' check (dinner_confirm in ('y', 'n')) -- 승인 여부
   );
+
+
 
 -- 'd' || to_char(sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0')
 create sequence seq_dinner maxvalue 9999 cycle;
@@ -66,7 +68,7 @@ create table
     member_name varchar2 (30) not null,
     member_nick varchar2 (30) not null,
     member_phone char(13) not null,
-    member_addr varchar2 (30) not null,
+    member_addr varchar2 (100) not null,
     member_gender char(1) not null check (member_gender in ('m', 'f')),
     member_email varchar2 (30) not null,
     enroll_date date default sysdate not null,
@@ -132,5 +134,8 @@ create table
     report char(1) default 'n' not null check (report in ('n', 'y')),
     primary key (review_no, member_no)
   );
+
+-- 수정 로그 : tbl_dinner dinner_addr, dinner_name  / member_addr 컬럼 자료형 크기 조정
+
 
 commit;
