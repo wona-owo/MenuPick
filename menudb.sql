@@ -127,6 +127,10 @@ create sequence seq_book maxvalue 9999 cycle;
 -- Insert into tbl_book
 insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411060001', 'm2411060002', to_date('24/11/15', 'yy/mm/dd'), '1230', 4);
 
+select * from tbl_book;
+
+select book_no, book_date from tbl_book where book_no = 'b2411060001' and extract(month from book_date) = 11 and extract(year from book_date) = 2024;
+
 create table
   tbl_recommend (
     review_no varchar2 (11) references tbl_review (review_no) on delete cascade,
@@ -139,6 +143,5 @@ create table
 alter table tbl_dinner modify dinner_addr varchar2(100);
 alter table tbl_dinner modify dinner_name varchar2(100);
 alter table tbl_member modify member_addr varchar2(100);
-
 
 commit;
