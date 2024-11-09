@@ -36,11 +36,33 @@ create table
 -- 'd' || to_char(sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0')
 create sequence seq_dinner maxvalue 9999 cycle;
 
+-- 실제 식당 데이터 삽입(삽입 데이터 수정)
 -- Inserting dinner1 account confirmed
-insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '식당하나 이름', '식당하나 주소', '0900', '2200', '010-1111-1111', 'blackeagle10@icloud.com', 'y', '30', '111111111111', 'dinner11234', 'dinner11234@', 'y');
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '온리밋', '서울 송파구 양재대로71길 19-13', '1000', '1900', '010-1111-1111', 'blackeagle10@icloud.com', 'y', '30', '111111111111', 'dinner11234', 'dinner11234@', 'y');
 
--- Inserting dinner2 account unconfirmed
-insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '식당둘 이름', '식당둘 주소', '1000', '2000', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'n');
+-- Inserting dinner2 account confirmed
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '포유티', '서울 송파구 위례성대로18길 28-13', '1100', '2130', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'y');
+
+-- Inserting dinner3 account confirmed
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '오븐스프링', '서울 송파구 가락로 271', '1000', '2100', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'y');
+
+-- Inserting dinner4 account confirmed
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '바운더리프리', '서울 송파구 백제고분로48길 4-27', '1000', '2000', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'y');
+
+-- Inserting dinner5 account confirmed
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '청년감자탕', '서울 송파구 오금로19길 5', '1010', '2150', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'y');
+
+-- Inserting dinner6 account unconfirmed
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '교동국수', '서울 송파구 백제고분로27길 24', '1130', '2000', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'n');
+
+-- Inserting dinner7 account unconfirmed
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '서두산딤섬', '서울 송파구 올림픽로32길 18-23', '1130', '2200', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'n');
+
+-- Inserting dinner8 account unconfirmed
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '맛쟁이떡볶이', '서울 송파구 석촌호수로 134 1층', '1100', '2030', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'n');
+
+-- Inserting dinner9 account unconfirmed
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '송돈', '서울 송파구 가락로 280', '1600', '2230', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'n');
 
 select * from tbl_dinner;
 
@@ -143,5 +165,17 @@ create table
 alter table tbl_dinner modify dinner_addr varchar2(100);
 alter table tbl_dinner modify dinner_name varchar2(100);
 alter table tbl_member modify member_addr varchar2(100);
+
+
+-- 즐겨찾기
+insert into tbl_like values ('d2411080001','m2411080002');
+insert into tbl_like values ('d2411080002','m2411080002');
+insert into tbl_like values ('d2411080003','m2411080002');
+
+select * from tbl_member;
+select * from tbl_like;
+select * from tbl_dinner;
+
+Select * From tbl_dinner D left join tbl_like L on (d.dinner_no= l.dinner_no) where l.member_no = 'm2411080002';
 
 commit;
