@@ -31,8 +31,6 @@ create table
     dinner_confirm char(1) default 'n' check (dinner_confirm in ('y', 'n')) -- 승인 여부
   );
 
-
-
 -- 'd' || to_char(sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0')
 create sequence seq_dinner maxvalue 9999 cycle;
 
@@ -97,7 +95,6 @@ create table
     adult_confirm char(1) default 'n' check (adult_confirm in ('y', 'n')),
     member_level number default 3 not null check (member_level in (1, 2, 3))
   );
-
 
 -- 'm' || to_char(sysdate, 'yymmdd') || lpad (seq_member.nextval, 4, '0')
 create sequence seq_member maxvalue 9999 cycle;
