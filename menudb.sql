@@ -41,25 +41,25 @@ insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '포유티', '서울 송파구 위례성대로18길 28-13', '1100', '2130', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'y');
 
 -- Inserting dinner3 account confirmed
-insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '오븐스프링', '서울 송파구 가락로 271', '1000', '2100', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'y');
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '오븐스프링', '서울 송파구 가락로 271', '1000', '2100', '010-3333-3333', 'blackeagle10@icloud.com', 'y', '30', '333333333333', 'dinner31234', 'dinner31234@', 'y');
 
 -- Inserting dinner4 account confirmed
-insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '바운더리프리', '서울 송파구 백제고분로48길 4-27', '1000', '2000', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'y');
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '바운더리프리', '서울 송파구 백제고분로48길 4-27', '1000', '2000', '010-4444-4444', 'blackeagle10@icloud.com', 'y', '30', '444444444444', 'dinner41234', 'dinner41234@', 'y');
 
 -- Inserting dinner5 account confirmed
-insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '청년감자탕', '서울 송파구 오금로19길 5', '1010', '2150', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'y');
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '청년감자탕', '서울 송파구 오금로19길 5', '1010', '2150', '010-5555-5555', 'blackeagle10@icloud.com', 'y', '30', '555555555555', 'dinner51234', 'dinner51234@', 'y');
 
 -- Inserting dinner6 account unconfirmed
-insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '교동국수', '서울 송파구 백제고분로27길 24', '1130', '2000', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'n');
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '교동국수', '서울 송파구 백제고분로27길 24', '1130', '2000', '010-6666-6666', 'blackeagle10@icloud.com', 'y', '30', '666666666666', 'dinner61234', 'dinner61234@', 'n');
 
 -- Inserting dinner7 account unconfirmed
-insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '서두산딤섬', '서울 송파구 올림픽로32길 18-23', '1130', '2200', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'n');
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '서두산딤섬', '서울 송파구 올림픽로32길 18-23', '1130', '2200', '010-7777-7777', 'blackeagle10@icloud.com', 'y', '30', '777777777777', 'dinner71234', 'dinner71234@', 'n');
 
 -- Inserting dinner8 account unconfirmed
-insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '맛쟁이떡볶이', '서울 송파구 석촌호수로 134 1층', '1100', '2030', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'n');
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '맛쟁이떡볶이', '서울 송파구 석촌호수로 134 1층', '1100', '2030', '010-8888-8888', 'blackeagle10@icloud.com', 'y', '30', '888888888888', 'dinner81234', 'dinner81234@', 'n');
 
 -- Inserting dinner9 account unconfirmed
-insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '송돈', '서울 송파구 가락로 280', '1600', '2230', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'n');
+insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '송돈', '서울 송파구 가락로 280', '1600', '2230', '010-9999-9999', 'blackeagle10@icloud.com', 'y', '30', '999999999999', 'dinner91234', 'dinner91234@', 'n');
 
 select * from tbl_dinner;
 
@@ -139,12 +139,12 @@ create sequence seq_review maxvalue 9999 cycle;
 
 create table
   tbl_book (
-    book_no varchar2 (11),
+    book_no varchar2 (11) primary key,
     dinner_no varchar2 (11) references tbl_dinner (dinner_no) on delete cascade,
     member_no varchar2 (11) references tbl_member (member_no) on delete cascade,
-    book_date date,
-    book_time varchar2 (20),
-    book_cnt number
+    book_date date not null,
+    book_time varchar2 (20) not null,
+    book_cnt number not null
   );
 
 -- 'b' || to_char(sysdate, 'yymmdd') || lpad (seq_book.nextval, 4, '0')
