@@ -7,7 +7,6 @@ drop table tbl_like;
 drop table tbl_review cascade constraints;
 drop table tbl_book;
 drop table tbl_recommend;
-drop table tbl_report;
 
 drop sequence seq_dinner;
 drop sequence seq_member;
@@ -116,6 +115,14 @@ create table
     member_no varchar2 (11) not null references tbl_member (member_no) on delete cascade,
     primary key (dinner_no, member_no) -- 프라이머리 키 두개
   );
+  
+select * from tbl_dinner;
+select * from tbl_member;
+
+-- 즐겨찾기
+insert into tbl_like values ('d2411100001','m2411100002');
+insert into tbl_like values ('d2411100002','m2411100002');
+insert into tbl_like values ('d2411100003','m2411100003');
 
 create table
   tbl_review (
@@ -144,13 +151,9 @@ create table
 create sequence seq_book maxvalue 9999 cycle;
 
 -- Insert into tbl_book
-insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411060001', 'm2411060002', to_date('24/11/15', 'yy/mm/dd'), '1230', 4);
-insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411060001', 'm2411060002', to_date('24/11/06', 'yy/mm/dd'), '1230', 4);
-insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411060001', 'm2411060003', to_date('24/11/15', 'yy/mm/dd'), '1800', 4);
-
-select * from tbl_book;
-
-select book_no, book_date from tbl_book where book_no = 'b2411060001' and extract(month from book_date) = 11 and extract(year from book_date) = 2024;
+insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411100001', 'm2411100001', to_date('24/11/15', 'yy/mm/dd'), '1230', 4);
+insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411100001', 'm2411100002', to_date('24/11/06', 'yy/mm/dd'), '1230', 4);
+insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411100001', 'm2411100003', to_date('24/11/15', 'yy/mm/dd'), '1800', 4);
 
 create table
   tbl_recommend (
@@ -164,16 +167,6 @@ create table
 alter table tbl_dinner modify dinner_addr varchar2(100);
 alter table tbl_dinner modify dinner_name varchar2(100);
 alter table tbl_member modify member_addr varchar2(100);
-
-
--- 즐겨찾기
-insert into tbl_like values ('d2411080001','m2411080002');
-insert into tbl_like values ('d2411080002','m2411080002');
-insert into tbl_like values ('d2411080003','m2411080002');
-
-select * from tbl_member;
-select * from tbl_like;
-select * from tbl_dinner;
 
 Select * From tbl_dinner D left join tbl_like L on (d.dinner_no= l.dinner_no) where l.member_no = 'm2411080002';
 
