@@ -126,6 +126,8 @@ create sequence seq_book maxvalue 9999 cycle;
 
 -- Insert into tbl_book
 insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411060001', 'm2411060002', to_date('24/11/15', 'yy/mm/dd'), '1230', 4);
+insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411060001', 'm2411060002', to_date('24/11/06', 'yy/mm/dd'), '1230', 4);
+insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411060001', 'm2411060003', to_date('24/11/15', 'yy/mm/dd'), '1800', 4);
 
 select * from tbl_book;
 
