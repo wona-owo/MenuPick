@@ -165,6 +165,6 @@ alter table tbl_dinner modify dinner_addr varchar2(100);
 alter table tbl_dinner modify dinner_name varchar2(100);
 alter table tbl_member modify member_addr varchar2(100);
 
-Select * From tbl_dinner D left join tbl_like L on (d.dinner_no= l.dinner_no) where l.member_no = 'm2411080002';
+select * from tbl_dinner d left join tbl_like l on (d.dinner_no= l.dinner_no) where l.member_no = 'm2411120002';
 
 commit;
