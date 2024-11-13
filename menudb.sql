@@ -115,14 +115,11 @@ create table
     member_no varchar2 (11) not null references tbl_member (member_no) on delete cascade,
     primary key (dinner_no, member_no) -- 프라이머리 키 두개
   );
-  
-select * from tbl_dinner;
-select * from tbl_member;
 
 -- 즐겨찾기
-insert into tbl_like values ('d2411100001','m2411100002');
-insert into tbl_like values ('d2411100002','m2411100002');
-insert into tbl_like values ('d2411100003','m2411100003');
+insert into tbl_like values ('d2411120001','m2411120002');
+insert into tbl_like values ('d2411120002','m2411120002');
+insert into tbl_like values ('d2411120003','m2411120003');
 
 create table
   tbl_review (
@@ -151,9 +148,9 @@ create table
 create sequence seq_book maxvalue 9999 cycle;
 
 -- Insert into tbl_book
-insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411100001', 'm2411100001', to_date('24/11/15', 'yy/mm/dd'), '1230', 4);
-insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411100001', 'm2411100002', to_date('24/11/06', 'yy/mm/dd'), '1230', 4);
-insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411100001', 'm2411100003', to_date('24/11/15', 'yy/mm/dd'), '1800', 4);
+insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411120001', 'm2411120001', to_date('24/11/15', 'yy/mm/dd'), '1230', 4);
+insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411120001', 'm2411120002', to_date('24/11/06', 'yy/mm/dd'), '1230', 4);
+insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411120001', 'm2411120003', to_date('24/11/15', 'yy/mm/dd'), '1800', 4);
 
 create table
   tbl_recommend (
@@ -168,7 +165,7 @@ alter table tbl_dinner modify dinner_addr varchar2(100);
 alter table tbl_dinner modify dinner_name varchar2(100);
 alter table tbl_member modify member_addr varchar2(100);
 
-Select * From tbl_dinner D left join tbl_like L on (d.dinner_no= l.dinner_no) where l.member_no = 'm2411080002';
+select * from tbl_dinner d left join tbl_like l on (d.dinner_no= l.dinner_no) where l.member_no = 'm2411120002';
 
 -- tbl_menu 데이터
 insert into tbl_menu values d2411120004, ,18000;
