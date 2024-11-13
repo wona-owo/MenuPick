@@ -170,4 +170,26 @@ alter table tbl_member modify member_addr varchar2(100);
 
 Select * From tbl_dinner D left join tbl_like L on (d.dinner_no= l.dinner_no) where l.member_no = 'm2411080002';
 
+-- tbl_menu 데이터
+insert into tbl_menu values d2411120004, ,18000;
+insert into tbl_menu values d2411120003,  ,12000;
+insert into tbl_menu values d2411120003,  ,20000;
+insert into tbl_menu values d2411120004,  ,15000;
+insert into tbl_menu values d2411120005,  ,13000;
+insert into tbl_menu values d2411120005,  ,7000;
+
+-- tbl_food 데이터
+insert into tbl_food values food_no_seq, '음식1', '한식', '육류';
+insert into tbl_food values food_no_seq, '음식2', '양식', '찌개';
+insert into tbl_food values food_no_seq, '음식3', '일식', '국수';
+insert into tbl_food values food_no_seq, '음식4', '일식', '몰라';
+insert into tbl_food values food_no_seq, '음식1', '한식', '육류';
+insert into tbl_food values food_no_seq, '음식2', '양식', '찌개';
+insert into tbl_food values food_no_seq, '음식3', '일식', '국수';
+insert into tbl_food values food_no_seq, '음식4', '일식', '몰라';
+insert into tbl_food values food_no_seq, '음식5', '한식', '육류';
+
+select * from tbl_menu;
+select * from tbl_food;
+
 commit;
