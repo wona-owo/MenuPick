@@ -75,9 +75,6 @@ create table
     primary key (dinner_no, food_no) -- 프라이머리 키 두개
   );
 
-select * from tbl_dinner;
-select * from tbl_food;
-
 -- tbl_menu 데이터
 insert into tbl_menu values ('d2411140004', 'f2411140001', 18000);
 insert into tbl_menu values ('d2411140003', 'f2411140002', 12000);
