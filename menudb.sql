@@ -12,6 +12,7 @@ drop sequence seq_dinner;
 drop sequence seq_member;
 drop sequence seq_review;
 drop sequence seq_book;
+drop sequence seq_food;
 
 create table
   tbl_dinner (
@@ -34,34 +35,15 @@ create table
 create sequence seq_dinner maxvalue 9999 cycle;
 
 -- 실제 식당 데이터 삽입(삽입 데이터 수정)
--- Inserting dinner1 account confirmed
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '온리밋', '서울 송파구 양재대로71길 19-13', '1000', '1900', '010-1111-1111', 'blackeagle10@icloud.com', 'y', '30', '111111111111', 'dinner11234', 'dinner11234@', 'y');
-
--- Inserting dinner2 account confirmed
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '포유티', '서울 송파구 위례성대로18길 28-13', '1100', '2130', '010-2222-2222', 'blackeagle10@icloud.com', 'y', '30', '222222222222', 'dinner21234', 'dinner21234@', 'y');
-
--- Inserting dinner3 account confirmed
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '오븐스프링', '서울 송파구 가락로 271', '1000', '2100', '010-3333-3333', 'blackeagle10@icloud.com', 'y', '30', '333333333333', 'dinner31234', 'dinner31234@', 'y');
-
--- Inserting dinner4 account confirmed
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '바운더리프리', '서울 송파구 백제고분로48길 4-27', '1000', '2000', '010-4444-4444', 'blackeagle10@icloud.com', 'y', '30', '444444444444', 'dinner41234', 'dinner41234@', 'y');
-
--- Inserting dinner5 account confirmed
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '청년감자탕', '서울 송파구 오금로19길 5', '1010', '2150', '010-5555-5555', 'blackeagle10@icloud.com', 'y', '30', '555555555555', 'dinner51234', 'dinner51234@', 'y');
-
--- Inserting dinner6 account unconfirmed
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '교동국수', '서울 송파구 백제고분로27길 24', '1130', '2000', '010-6666-6666', 'blackeagle10@icloud.com', 'y', '30', '666666666666', 'dinner61234', 'dinner61234@', 'n');
-
--- Inserting dinner7 account unconfirmed
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '서두산딤섬', '서울 송파구 올림픽로32길 18-23', '1130', '2200', '010-7777-7777', 'blackeagle10@icloud.com', 'y', '30', '777777777777', 'dinner71234', 'dinner71234@', 'n');
-
--- Inserting dinner8 account unconfirmed
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '맛쟁이떡볶이', '서울 송파구 석촌호수로 134 1층', '1100', '2030', '010-8888-8888', 'blackeagle10@icloud.com', 'y', '30', '888888888888', 'dinner81234', 'dinner81234@', 'n');
-
--- Inserting dinner9 account unconfirmed
 insert into tbl_dinner values ( 'd' || to_char (sysdate, 'yymmdd') || lpad (seq_dinner.nextval, 4, '0'), '송돈', '서울 송파구 가락로 280', '1600', '2230', '010-9999-9999', 'blackeagle10@icloud.com', 'y', '30', '999999999999', 'dinner91234', 'dinner91234@', 'n');
-
-select * from tbl_dinner;
 
 create table
   tbl_food (
@@ -71,6 +53,20 @@ create table
     food_cat varchar2 (30) not null
   );
 
+-- 'f' || to_char(sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0')
+create sequence seq_food maxvalue 9999 cycle;
+
+-- tbl_food 데이터
+insert into tbl_food values ( 'f' || to_char (sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0'), '음식1', '한식', '육류');
+insert into tbl_food values ( 'f' || to_char (sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0'), '음식2', '양식', '찌개');
+insert into tbl_food values ( 'f' || to_char (sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0'), '음식3', '일식', '국수');
+insert into tbl_food values ( 'f' || to_char (sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0'), '음식4', '일식', '몰라');
+insert into tbl_food values ( 'f' || to_char (sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0'), '음식1', '한식', '육류');
+insert into tbl_food values ( 'f' || to_char (sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0'), '음식2', '양식', '찌개');
+insert into tbl_food values ( 'f' || to_char (sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0'), '음식3', '일식', '국수');
+insert into tbl_food values ( 'f' || to_char (sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0'), '음식4', '일식', '몰라');
+insert into tbl_food values ( 'f' || to_char (sysdate, 'yymmdd') || lpad (seq_food.nextval, 4, '0'), '음식5', '한식', '육류');
+
 create table
   tbl_menu (
     dinner_no varchar2 (11) not null references tbl_dinner (dinner_no) on delete cascade,
@@ -78,6 +74,17 @@ create table
     price number not null,
     primary key (dinner_no, food_no) -- 프라이머리 키 두개
   );
+
+select * from tbl_dinner;
+select * from tbl_food;
+
+-- tbl_menu 데이터
+insert into tbl_menu values ('d2411140004', 'f2411140001', 18000);
+insert into tbl_menu values ('d2411140003', 'f2411140002', 12000);
+insert into tbl_menu values ('d2411140003', 'f2411140003', 20000);
+insert into tbl_menu values ('d2411140004', 'f2411140004', 15000);
+insert into tbl_menu values ('d2411140005', 'f2411140005', 13000);
+insert into tbl_menu values ('d2411140005', 'f2411140001', 7000);
 
 create table
   tbl_member (
@@ -98,16 +105,10 @@ create table
 -- 'm' || to_char(sysdate, 'yymmdd') || lpad (seq_member.nextval, 4, '0')
 create sequence seq_member maxvalue 9999 cycle;
 
--- Inserting admin account
+-- Inserting members
 insert into tbl_member values ( 'm' || to_char (sysdate, 'yymmdd') || lpad (seq_member.nextval, 4, '0'), 'admin999', 'admin999@', '관리자 이름', '관리자 별명', '010-8645-5542', '경기도 용인시 기흥구', 'm', 'blackeagle10@icloud.com', sysdate, 'y', '1');
-
--- Inserting user1 female, none adult, level 2 account
 insert into tbl_member values ( 'm' || to_char (sysdate, 'yymmdd') || lpad (seq_member.nextval, 4, '0'), 'user11234', 'user11234@', '유저하나 이름', '유저하나 별명', '010-1111-1111', '유저하나 주소', 'f', 'blackeagle10@icloud.com', sysdate, 'n', '2');
-
--- Inserting user2 male, adult, level 3 account
 insert into tbl_member values ( 'm' || to_char (sysdate, 'yymmdd') || lpad (seq_member.nextval, 4, '0'), 'user21234', 'user21234@', '유저둘 이름', '유저둘 별명', '010-2222-2222', '유저둘 주소', 'm', 'blackeagle10@icloud.com', sysdate, 'y', '3');
-
-select * from tbl_member;
 
 create table
   tbl_like (
@@ -117,9 +118,9 @@ create table
   );
 
 -- 즐겨찾기
-insert into tbl_like values ('d2411120001','m2411120002');
-insert into tbl_like values ('d2411120002','m2411120002');
-insert into tbl_like values ('d2411120003','m2411120003');
+insert into tbl_like values ('d2411140001', 'm2411140002');
+insert into tbl_like values ('d2411140002', 'm2411140002');
+insert into tbl_like values ('d2411140003', 'm2411140003');
 
 create table
   tbl_review (
@@ -148,9 +149,9 @@ create table
 create sequence seq_book maxvalue 9999 cycle;
 
 -- Insert into tbl_book
-insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411120001', 'm2411120001', to_date('24/11/15', 'yy/mm/dd'), '1230', 4);
-insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411120001', 'm2411120002', to_date('24/11/06', 'yy/mm/dd'), '1230', 4);
-insert into tbl_book values ( 'b' || to_char(sysdate, 'yymmdd') || lpad(seq_book.nextval, 4, '0'), 'd2411120001', 'm2411120003', to_date('24/11/15', 'yy/mm/dd'), '1800', 4);
+insert into tbl_book values ( 'b' || to_char (sysdate, 'yymmdd') || lpad (seq_book.nextval, 4, '0'), 'd2411140001', 'm2411140001', to_date ('24/11/15', 'yy/mm/dd'), '1230', 4);
+insert into tbl_book values ( 'b' || to_char (sysdate, 'yymmdd') || lpad (seq_book.nextval, 4, '0'), 'd2411140001', 'm2411140002', to_date ('24/11/06', 'yy/mm/dd'), '1230', 4);
+insert into tbl_book values ( 'b' || to_char (sysdate, 'yymmdd') || lpad (seq_book.nextval, 4, '0'), 'd2411140001', 'm2411140003', to_date ('24/11/15', 'yy/mm/dd'), '1800', 4);
 
 create table
   tbl_recommend (
@@ -160,33 +161,6 @@ create table
     primary key (review_no, member_no)
   );
 
--- 수정 로그 : tbl_dinner dinner_addr, dinner_name  / member_addr 컬럼 자료형 크기 조정
-alter table tbl_dinner modify dinner_addr varchar2(100);
-alter table tbl_dinner modify dinner_name varchar2(100);
-alter table tbl_member modify member_addr varchar2(100);
-
-select * from tbl_dinner d left join tbl_like l on (d.dinner_no= l.dinner_no) where l.member_no = 'm2411120002';
-
--- tbl_menu 데이터
-insert into tbl_menu values d2411120004, ,18000;
-insert into tbl_menu values d2411120003,  ,12000;
-insert into tbl_menu values d2411120003,  ,20000;
-insert into tbl_menu values d2411120004,  ,15000;
-insert into tbl_menu values d2411120005,  ,13000;
-insert into tbl_menu values d2411120005,  ,7000;
-
--- tbl_food 데이터
-insert into tbl_food values food_no_seq, '음식1', '한식', '육류';
-insert into tbl_food values food_no_seq, '음식2', '양식', '찌개';
-insert into tbl_food values food_no_seq, '음식3', '일식', '국수';
-insert into tbl_food values food_no_seq, '음식4', '일식', '몰라';
-insert into tbl_food values food_no_seq, '음식1', '한식', '육류';
-insert into tbl_food values food_no_seq, '음식2', '양식', '찌개';
-insert into tbl_food values food_no_seq, '음식3', '일식', '국수';
-insert into tbl_food values food_no_seq, '음식4', '일식', '몰라';
-insert into tbl_food values food_no_seq, '음식5', '한식', '육류';
-
-select * from tbl_menu;
-select * from tbl_food;
+select * from tbl_dinner d left join tbl_like l on (d.dinner_no = l.dinner_no) where l.member_no = 'm2411140002';
 
 commit;
